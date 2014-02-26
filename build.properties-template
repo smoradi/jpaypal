@@ -1,0 +1,8 @@
+
+paypal.serviceBaseUri=http://127.0.0.1:9988
+
+# paypal sdk_config.properties parameters
+paypal.serviceEndPoint=https://api.sandbox.paypal.com
+paypal.clientId=AVC9PhARwbDtgUeZAyJp5bVMYSYKrL4G3TqbejidsBDix5PMv8amWfcYnybi
+paypal.clientSecret=EPkTJhDmge9gLqXqtF1ScHrftKRDzCTJcpsmhxnNgaktJ_-jE3aobyuv6QdK
+paypal.http.UseProxy=true

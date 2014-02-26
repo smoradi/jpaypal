@@ -1,0 +1,15 @@
+# Installation steps for JPaypal-micro-service (in FreeBSD operating system).
+#
+# 1. Modify build.properties-template with your settings.
+#
+# 2. From root of project exected following Maven commands
+mvn clean validate
+mvn clean install
+#
+# 3. As root user execute following shell command
+ln -s /path/to/jpaypal-micro-service/jpaypal-server/jpaypal_server_freebsd_daemon /usr/local/etc/rc.d/jpaypal-server
+#
+# Note: see jpaypal_server_freebsd_daemon and modify it if you need to.
+#
+# Done.
+

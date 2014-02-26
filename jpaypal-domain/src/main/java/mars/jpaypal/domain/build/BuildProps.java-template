@@ -1,0 +1,11 @@
+package mars.jpaypal.domain.build;
+
+/**
+ * @EDIT-WARNING-NOTE@
+ */
+public class BuildProps {
+
+  public static final String clientID = "@CLIENT-ID@";
+  public static final String clientSecret = "@CLIENT-SECRET@";
+  public static final String serviceBaseUri = "@SERVICE-BASE-URI@";
+}

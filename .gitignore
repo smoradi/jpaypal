@@ -1,0 +1,7 @@
+build.properties
+jpaypal-domain/src/main/java/mars/jpaypal/domain/build/BuildProps.java
+jpaypal-server/src/main/resources/sdk_config.properties
+target
+.project
+.classpath
+.settings
