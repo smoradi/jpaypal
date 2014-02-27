@@ -7,7 +7,7 @@ mvn clean validate
 mvn clean install
 #
 # 3. As root user execute following shell command
-ln -s /path/to/jpaypal-micro-service/jpaypal-server/jpaypal_server_freebsd_daemon /usr/local/etc/rc.d/jpaypal-server
+ln -s /path/to/jpaypal-micro-service/jpaypal-server/jpaypal_server_freebsd_daemon /usr/local/etc/rc.d/jpaypal_server
 #
 # Note: see jpaypal_server_freebsd_daemon and modify it if you need to.
 #
