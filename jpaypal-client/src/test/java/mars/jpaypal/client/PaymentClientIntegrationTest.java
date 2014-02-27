@@ -1,7 +1,7 @@
 package mars.jpaypal.client;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.AfterClass;
@@ -41,7 +41,7 @@ public class PaymentClientIntegrationTest {
       assertNotNull("created payment should not be null", createdPayment);
       assertNotNull("payment token should not be null", createdPayment.getToken());
     } catch (UnexpectedHttpStatusCode e) {
-      assertEquals("404", e.getStatuscode()+"");
+      fail("Create payment failed with HTTP error code " + e.getStatuscode());
     }
   }
 

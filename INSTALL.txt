@@ -15,4 +15,5 @@ ln -s /path/to/jpaypal-micro-service/jpaypal-server/jpaypal_server_freebsd_daemo
 jpaypal_server_enable="YES"
 #
 # Done.
-
+#
+# see PaymentClientIntegrationTest.java for client usage example.
