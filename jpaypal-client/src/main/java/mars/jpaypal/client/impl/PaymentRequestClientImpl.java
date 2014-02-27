@@ -44,10 +44,10 @@ public final class PaymentRequestClientImpl extends ClientBaseImpl {
                    param(payerId, paymentExecuteFB.getPayerId());
     Entity<Form> entity = Entity.form(form);
     Response response = this.webTarget.
-        path(Paths._payment_execute).
+        path(Paths._payment_create).
         request(MediaType.APPLICATION_FORM_URLENCODED).
         accept(MediaType.APPLICATION_XML).
-        post(entity);
+        put(entity);
     if (response.getStatus() == Status.OK.getStatusCode()) {
       return response.readEntity(new GenericType<PaymentExecuteDTO>(){});
     }

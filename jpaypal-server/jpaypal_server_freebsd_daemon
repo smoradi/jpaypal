@@ -8,12 +8,12 @@
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 
-JPAYPAL_DIR=/usr/ws/jpaypal/jpaypal-server
+JPAYPAL_DIR=/usr/ws/jpaypal-micro-service/jpaypal-server
 USER=webreader	# a non root user of your unix server
 JSVC=/opt/ws/commons-daemon/src/native/unix/jsvc	# see jsvc installation[1]
 JAVA_HOME=/usr/local/openjdk6
 #export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
-export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8 -Dhttps.proxyHost=localhost -Dhttps.proxyPort=8118 -Dhttp.proxyHost=localhost -Dhttp.proxyPort=8118 -DsocksProxyHost=localhost -DsocksProxyPort=9050
+export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8 -Dhttps.proxyHost=localhost -Dhttps.proxyPort=8118 -Dhttp.proxyHost=localhost -Dhttp.proxyPort=8118 -DsocksProxyHost=localhost -DsocksProxyPort=9050"
 CLASS_PATH="${JPAYPAL_DIR}/target/classes:${JPAYPAL_DIR}/target/dependency/*"
 CLASS=mars.jpaypal.server.Daemon
 PID=/tmp/jpaypal-server-jsvc.pid

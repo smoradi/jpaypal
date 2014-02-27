@@ -3,6 +3,7 @@ package mars.jpaypal.server.resources.payment;
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.GenericEntity;
@@ -19,12 +20,12 @@ import mars.jpaypal.domain.model.payment.formbean.PaymentExecuteFB;
 import mars.jpaypal.domain.model.payment.formbean.PaymentFB;
 import mars.jpaypal.server.service.payment.PaymentService;
 
+@Path(Paths._payment_create)
 public class PaymentResource {
 
   private final PaymentService paymentService = new PaymentService();
 
   @POST
-  @Path(Paths._payment_create)
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
   @Produces(MediaType.APPLICATION_XML)
   public Response createPayment(@BeanParam PaymentFB paymentFB) {
@@ -37,8 +38,7 @@ public class PaymentResource {
     }
   }
 
-  @POST
-  @Path(Paths._payment_execute)
+  @PUT
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
   @Produces(MediaType.APPLICATION_XML)
   public Response executePayment(@BeanParam PaymentExecuteFB paymentExecuteFB) {
