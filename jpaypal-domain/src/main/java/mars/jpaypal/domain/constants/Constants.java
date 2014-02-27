@@ -33,4 +33,6 @@ public class Constants {
   public static final String paymentId = "paymentId";
   public static final String payerId = "payerId";
 
+  // RefundFB
+  public static final String saleId = "saleId";
 }

@@ -30,9 +30,11 @@ public final class PaymentRequestClientImpl extends ClientBaseImpl {
                    param(returnUrl, paymentFB.getReturnUrl()).
                    param(cancelUrl, paymentFB.getCancelUrl());
     Entity<Form> entity = Entity.form(form);
-    Response response = this.webTarget.path(Paths._payment_create).
+    Response response = this.webTarget.
+        path(Paths._payment_create).
         request(MediaType.APPLICATION_FORM_URLENCODED).
-        accept(MediaType.APPLICATION_XML).post(entity);
+        accept(MediaType.APPLICATION_XML).
+        post(entity);
     if (response.getStatus() == Status.CREATED.getStatusCode()) {
       return response.readEntity(new GenericType<PaymentDTO>(){});
     }

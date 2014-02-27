@@ -5,6 +5,8 @@ import mars.jpaypal.domain.model.payment.dto.PaymentDTO;
 import mars.jpaypal.domain.model.payment.dto.PaymentExecuteDTO;
 import mars.jpaypal.domain.model.payment.formbean.PaymentExecuteFB;
 import mars.jpaypal.domain.model.payment.formbean.PaymentFB;
+import mars.jpaypal.domain.model.sale.refund.dto.RefundDTO;
+import mars.jpaypal.domain.model.sale.refund.formbean.RefundFB;
 
 public interface JPaypalClient {
 
@@ -12,4 +14,5 @@ public interface JPaypalClient {
 
   public PaymentExecuteDTO executePayment(PaymentExecuteFB paymentExecuteFB) throws UnexpectedHttpStatusCode;
 
+  public RefundDTO refundSale(RefundFB refundFB) throws UnexpectedHttpStatusCode;
 }

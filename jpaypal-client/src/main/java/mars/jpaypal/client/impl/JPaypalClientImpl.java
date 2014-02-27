@@ -11,14 +11,18 @@ import mars.jpaypal.domain.model.payment.dto.PaymentDTO;
 import mars.jpaypal.domain.model.payment.dto.PaymentExecuteDTO;
 import mars.jpaypal.domain.model.payment.formbean.PaymentExecuteFB;
 import mars.jpaypal.domain.model.payment.formbean.PaymentFB;
+import mars.jpaypal.domain.model.sale.refund.dto.RefundDTO;
+import mars.jpaypal.domain.model.sale.refund.formbean.RefundFB;
 
 public final class JPaypalClientImpl extends ClientBaseImpl implements JPaypalClient {
 
-  private final PaymentRequestClientImpl paymentRequestClientImpl; 
+  private final PaymentRequestClientImpl paymentRequestClientImpl;
+  private final SaleRefundClientImpl saleRefundClientImpl;
 
   public JPaypalClientImpl(final WebTarget webTarget) {
     super(webTarget);
     paymentRequestClientImpl = new PaymentRequestClientImpl(webTarget);
+    saleRefundClientImpl = new SaleRefundClientImpl(webTarget);
   }
 
   public static JPaypalClient newClient() {
@@ -35,6 +39,11 @@ public final class JPaypalClientImpl extends ClientBaseImpl implements JPaypalCl
   @Override
   public PaymentExecuteDTO executePayment(final PaymentExecuteFB paymentExecuteFB) throws UnexpectedHttpStatusCode {
     return paymentRequestClientImpl.executePayment(paymentExecuteFB);
+  }
+
+  @Override
+  public RefundDTO refundSale(RefundFB refundFB) throws UnexpectedHttpStatusCode {
+    return saleRefundClientImpl.refundSale(refundFB);
   }
 
 }
