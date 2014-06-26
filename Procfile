@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -jar jpaypal-runner/target/dependency/jetty-run*.jar --port $PORT jpaypal-runner/target/jpaypal-runner-*.war
